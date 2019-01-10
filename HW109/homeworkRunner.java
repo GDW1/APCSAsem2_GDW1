@@ -12,25 +12,40 @@ public class homeworkRunner
         int[] unsortedArray = {3, 2, 4, 2, 3, 5};
         //call the function
         int[] sortedArray = new int[unsortedArray.length];
-        sortedArray = bubbleSort(unsortedArray);
+        sortedArray = bubbleSortRecursive(unsortedArray);
         for(int i = 0; i < sortedArray.length; i++){
             System.out.println(sortedArray[i]);
         }
     }
 
     public static int[] bubbleSort(int[] unsortedArray){
-        boolean alreadySorted = true;
+        boolean alreadySorted = false;
         while(!alreadySorted){
             alreadySorted = true;
             for(int i = 0; i < (unsortedArray.length - 1); i++){
                 if(unsortedArray[i] > unsortedArray[i+1]){
                     int tempOne = unsortedArray[i];
-                    int tempTwo = unsortedArray[i+1];
-                    unsortedArray[i] = tempTwo;
+                    unsortedArray[i] = unsortedArray[i+1];
                     unsortedArray[i+1] = tempOne;
                     alreadySorted=false;
                 }
             }
+        }
+        return unsortedArray;
+    }
+
+    public static int[] bubbleSortRecursive(int[] unsortedArray){
+        boolean alreadySorted = true;
+        for(int i = 0; i < (unsortedArray.length - 1); i++){
+            if(unsortedArray[i] > unsortedArray[i+1]){
+                int tempOne = unsortedArray[i];
+                unsortedArray[i] = unsortedArray[i+1];
+                unsortedArray[i+1] = tempOne;
+                alreadySorted=false;
+            }
+        }
+        if(!alreadySorted){
+            unsortedArray = bubbleSortRecursive(unsortedArray);
         }
         return unsortedArray;
     }
