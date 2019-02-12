@@ -1,4 +1,4 @@
-package jgame.listener;
+package listener;
 
 import jgame.Context;
 import jgame.GObject;

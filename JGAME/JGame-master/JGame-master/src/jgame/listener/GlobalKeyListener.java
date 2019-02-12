@@ -1,4 +1,4 @@
-package jgame.listener;
+package listener;
 
 import java.util.Collection;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package jgame;
+ 
 
 import java.util.Collection;
 

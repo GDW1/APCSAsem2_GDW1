@@ -1,4 +1,4 @@
-package jgame.listener;
+package listener;
 
 import java.awt.geom.Rectangle2D;
 

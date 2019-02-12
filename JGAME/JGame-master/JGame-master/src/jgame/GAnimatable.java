@@ -1,4 +1,4 @@
-package jgame;
+ 
 
 /**
  * Any animated object that can go to the next and previous frames.

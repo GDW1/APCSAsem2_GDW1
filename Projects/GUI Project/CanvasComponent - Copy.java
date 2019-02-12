@@ -40,7 +40,7 @@ public class CanvasComponent extends JComponent implements MouseListener, MouseM
     }
     public void paintComponent(Graphics g){
         g.setColor(Color.red);
-        g.fillRect(x, y,width, height);
+        g.fillRect(x,y,width, height);
     }
     public void mouseClicked(MouseEvent e){
    
@@ -60,19 +60,23 @@ public class CanvasComponent extends JComponent implements MouseListener, MouseM
               
         }else{
             int slope = (mouseFromY-y)/(mouseFromX - x);
-            //if(slope > 0){
-                animationDeltaX = (mouseFromX - lastX)/10;
-                animationDeltaY = (mouseFromY - lastY)/10;
-            /*}else{
+            if(slope > 0){
+
+                    x =+ (mouseFromX - lastX)/2;
+                    y =+ (mouseFromY - lastY)/2;
+                    System.out.println(slope);
+                    repaint();
+                
+            }else{
                 
                     x += (mouseFromX - lastX)/2;
                     y += (mouseFromY - lastY)/2;
                     System.out.println(slope);
                     repaint();
                 
-            }*/
+            }
         }
-        repaint();
+
     }
     public void chase(int slope){
         for(int i = 0; i < 1000; i++){

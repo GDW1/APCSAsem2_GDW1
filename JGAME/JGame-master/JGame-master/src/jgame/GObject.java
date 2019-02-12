@@ -1,4 +1,4 @@
-package jgame;
+ 
 
 import java.awt.AlphaComposite;
 import java.awt.Graphics2D;

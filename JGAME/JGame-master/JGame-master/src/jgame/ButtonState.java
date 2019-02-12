@@ -1,4 +1,4 @@
-package jgame;
+ 
 
 /**
  * The possible states of a button.
