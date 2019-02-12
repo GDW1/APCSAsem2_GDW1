@@ -25,7 +25,7 @@ public class CanvasComponent extends JComponent implements MouseListener, MouseM
     double motionSpeed;
     public CanvasComponent(int _height, int _width){
         width = _width;
-        motionSpeed = 0;
+        motionSpeed = 1;
         height = _height;
         setSize(_width, _height);
         this.addMouseListener(this);
@@ -48,14 +48,41 @@ public class CanvasComponent extends JComponent implements MouseListener, MouseM
     public void mousePressed(MouseEvent e){
         mouseFromX = e.getX();
         mouseFromY = e.getY();
+        int lastX = x;
+        int lastY = y;
+        int slopeX = (mouseFromX - lastX);
         if(mouseFromX >= x  &&
            mouseFromX <= x + width &&
            mouseFromY >= y  &&
            mouseFromX <= y + height){
               x = mouseFromX - (width/2);
               y = mouseFromY - (height/2);
+              
+        }else{
+            int slope = (mouseFromY-y)/(mouseFromX - x);
+            if(slope > 0){
+
+                    x =+ (mouseFromX - lastX)/2;
+                    y =+ (mouseFromY - lastY)/2;
+                    System.out.println(slope);
+                    repaint();
+                
+            }else{
+                
+                    x += (mouseFromX - lastX)/2;
+                    y += (mouseFromY - lastY)/2;
+                    System.out.println(slope);
+                    repaint();
+                
+            }
         }
-        repaint();
+
+    }
+    public void chase(int slope){
+        for(int i = 0; i < 1000; i++){
+            x+=1;
+            y+=slope;
+        }
     }
     public void mouseReleased(MouseEvent e){
     
@@ -73,7 +100,9 @@ public class CanvasComponent extends JComponent implements MouseListener, MouseM
         if(e.getKeyChar() == '+'){
             motionSpeed += 2;
         }else if(e.getKeyChar() == '-'){
-            motionSpeed-= 2;
+            if(motionSpeed > 0){
+                motionSpeed -= 0.2;
+            }
         }
     }
     public void keyReleased(KeyEvent e){
@@ -84,40 +113,36 @@ public class CanvasComponent extends JComponent implements MouseListener, MouseM
     public void mouseDragged(MouseEvent e){
         int toX = e.getX();
         int toY = e.getY();
-        x = (toX - width/2);
-        y = toY - (height/2);
+        x = toX ;
+        y = toY ;
         repaint();
     }
     public void actionPerformed(ActionEvent e){
         Dimension componentSizeDimension = this.getSize();
-        // x += animationDeltaX;
-        // y += animationDeltaY;
-        double rand = (Math.random() * 3) - 1;
-        double rand2 = (Math.random() * 4) - 1;
-        if((x) + width > 400){
-            animationDeltaX = -1 + rand - motionSpeed;
-            animationDeltaY = -1 + rand2 - motionSpeed;
-            x+=animationDeltaX;
+        if(x + width > 400){
+            animationDeltaX = (0) * motionSpeed;
+            animationDeltaY = (1) * motionSpeed;
+            x+=-2;
             y+=animationDeltaY;
         }
-        else if((y) + height > 400){
-            animationDeltaX = -1 + rand - motionSpeed;
-            animationDeltaY = -1 + rand2 - motionSpeed;
+        else if(y + height > 400){
+            animationDeltaX = (-1) * motionSpeed;
+            animationDeltaY = (0) * motionSpeed;
             x+=animationDeltaX;
-            y+=animationDeltaY;
-        }else if(y < 10){
-            animationDeltaX = 1 + rand + motionSpeed;
-            animationDeltaY = 1 + rand2 + motionSpeed;
+            y+=-2;
+        }else if(y < 0){
+            animationDeltaX = (1) * motionSpeed;
+            animationDeltaY = (0) * motionSpeed;
             x+=animationDeltaX;
-            y+=animationDeltaY;
-        }else if(x < 10){
-            animationDeltaX = 1 + rand + motionSpeed;
-            animationDeltaY = 1 + rand2 + motionSpeed;
-            x+=animationDeltaX;
+            y+=3;
+        }else if(x < 0){
+            animationDeltaX = (0) * motionSpeed;
+            animationDeltaY = (-1) * motionSpeed;
+            x+=3;
             y+=animationDeltaY;
         }else{
-            x+=animationDeltaX;
-            y+=animationDeltaY;
+            x+=animationDeltaX * motionSpeed;
+            y+=animationDeltaY *motionSpeed;
         }
         repaint();
     }
