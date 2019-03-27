@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Shape
+comment0.text=\r\n\ The\ shape\ interface\ has\ the\ basic\ abstract\ methods\ for\ shapes\ such\ as\ circles\ or\ squares.\r\n\r\n\ @author\ Guy\ Wilks\r\n\ @version\ 3/26/19\r\n
+comment1.params=
+comment1.target=int\ numberOfSides()
+comment1.text=\r\n\ @return\ returns\ the\ number\ of\ sides\ of\ a\ shape.\ If\ the\ shape\ is\ a\ circle\ it\ will\ return\ Integer.MAX_VALUE\r\n
+comment2.params=
+comment2.target=double\ getArea()
+comment2.text=\r\n\ @return\ returns\ the\ area\ of\ a\ shape.\r\n
+comment3.params=
+comment3.target=double\ getPerimeter()
+comment3.text=\r\n\ @return\ returns\ the\ perimeter\ of\ a\ shape.\r\n
+numComments=4
