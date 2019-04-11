@@ -1,0 +1,35 @@
+a)
+
+public void addClimb(String peakName, int climbTime){
+	climbList.add(new climbInfo(peakName, climbtime));
+}
+
+
+b)
+public static void sortStringBubble( String  x [ ] )
+      {
+            int j;
+            boolean flag = true;  // will determine when the sort is finished
+            String temp;
+
+            while ( flag )
+            {
+                  flag = false;
+                  for ( j = 0;  j < x.length - 1;  j++ )
+                  {
+                          if ( x [ j ].compareToIgnoreCase( x [ j+1 ] ) > 0 )
+                          {                                             // ascending sort
+                                      temp = x [ j ];
+                                      x [ j ] = x [ j+1];     // swapping
+                                      x [ j+1] = temp; 
+                                      flag = true;
+                           } 
+                   } 
+            } 
+      } 
+
+public void addClimb(String peakName, int climbTime){
+	climbList = new ArrayList<ClimbInfo>(Array.asList(sortStringBubble(climbList.add(new climbInfo(peakName, climbtime)).toArray())))
+} 
+
+c) Yes, No
