@@ -12,12 +12,20 @@ public class Cell
     boolean occupied;
     int id;
     ArrayList<Cell> neighbors = new ArrayList<Cell>();
-
+    int row;
+    int col;
     /**
      * Constructor for objects of class Cell
      */
-    public Cell()
+    public Cell(boolean _occupied, int _id, int _row, int _col)
     {
         // initialise instance variables
+        occupied = false;
+        row = _row;
+        col = _col;
+        id = _id;
+    }
+    public void loadNeighbors(){
+        //neighbors = GridTester.findNeighbors(row, col);
     }
 }
