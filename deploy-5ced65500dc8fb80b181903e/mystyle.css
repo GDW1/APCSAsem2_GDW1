@@ -1,0 +1,9 @@
+#PageHead{
+  font-family: impact;
+  font-size: 10em;
+}
+body{
+  background-image:url("https://purepng.com/public/uploads/large/91507983757rexccoi7gltmrdbcjtdrhfgjci9ff26yr7x2wxsembppi6f5gthked7sv1dsgrev8yconltupvwu0jw2nrfrocsxs6bnfbzlego2.png"),
+                   url("http://pixelartmaker.com/art/8ec2e65c50dc91f.png");
+  background-size:cover;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>THE Chicken</title>
+  <script src="https://www.google.com/jsapi"></script>
+  <link rel="stylesheet" type="text/css" href="myStyle.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+  <h1 id="PageHead"><p style="color: blue; display:inline;">C</p><p style="color: red; display:inline;">HICK</p>EN1!1!!!111</h1>
+  <button onclick="newChicken()"> new friend </button>
+  <!-- <form id="myForm"><input type="text" id="searching" value="Is that a Yolk?!?!?!?"></form>
+  <button>search</button> -->
+  <p id="scungle"></p>
+  <a href="./page1.html">EGGGGGG</a>
+  <a href="./page2.html">Garfielf</a>
+  <a href="page4.html">HMMMMMMMMM</a>
+  <a href="page3.html">last page rip</a>
+
+
+  <script>
+  function newChicken(){
+    var rand =  Math.floor(Math.random() * (8) + 0);
+    document.body.style.backgroundImage = "url('" +chickenURLS[rand]+ "')";
+  }
+
+  var chickenURLS = [
+    "https://purepng.com/public/uploads/large/91507983757rexccoi7gltmrdbcjtdrhfgjci9ff26yr7x2wxsembppi6f5gthked7sv1dsgrev8yconltupvwu0jw2nrfrocsxs6bnfbzlego2.png",
+    "https://i.pinimg.com/736x/54/dc/19/54dc19fb5b690de733b2f3c2dbff8f8f.jpg",
+    "https://live.staticflickr.com/5123/5244438015_143a69d196_b.jpg",
+    "https://www.colourbox.com/preview/26733402-fat-chicken.jpg",
+    "https://pbs.twimg.com/profile_images/534878722089050112/_b5sPWLD.jpeg",
+    "https://media.gettyimages.com/illustrations/fat-chicken-illustration-id165722148",
+    "https://i.pinimg.com/originals/b8/7a/65/b87a65d8c7ade4a9b6619f83f97b5a3a.jpg",
+    "https://i.ytimg.com/vi/v6kLr4fQoGk/maxresdefault.jpg"
+  ]
+  var btn = document.createElement('BUTTON');
+  var t = document.createTextNode('EGGGGGGGGGGGGG');
+  var btnT = document.createElement('BUTTON');
+  var tT = document.createTextNode('search');
+  var toOpen = document.getElementById('scungle');
+  var a = document.createElement("FORM");
+  a.setAttribute("id", "myForm");
+  document.body.appendChild(a);
+  var b = document.createElement("INPUT");
+  b.setAttribute("type", "text");
+  b.setAttribute("id", "searching");
+  b.setAttribute("value", "Is that a Yolk?!?!?!?");
+  document.getElementById("myForm").appendChild(b);
+  sound = document.getElementById("myAudio")
+  var alpha = [
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
+    'l',
+    'm',
+    'n',
+    'o',
+    'p',
+    'q',
+    'r',
+    's',
+    't',
+    'u',
+    'v',
+    'w',
+    'x',
+    'y',
+    'z',
+  ];
+  btn.appendChild(t); // Append the text to <button>
+  btnT.appendChild(tT); // Append the text to <button>
+  document.body.appendChild(btnT);
+  document.body.appendChild(btn);
+  btn.addEventListener('click', function() {
+    document.getElementById('scungle').style.color = generateHex(alpha);
+    document.getElementById('scungle').innerHTML = randomWord(alpha);
+    toOpen.style.fontSize = Math.floor(Math.random() * 50);
+
+  });
+  btnT.addEventListener('click', function() {
+    if(document.getElementById("searching").value=='yolk')
+    {
+      document.getElementById('scungle').innerHTML = "Is that a jojo reference";
+      console.log('yo');
+    }else if(document.getElementById("searching").value=='jojo')
+    {
+      console.log('sound play');
+      sound.play();
+    }else if(document.getElementById("searching").value=='morty')
+    {
+      document.body.style.backgroundImage = "url('http://i0.kym-cdn.com/photos/images/facebook/001/282/726/110.png')";
+      document.getElementById('scungle').innerHTML = "Im Pickle Rick!!!!";
+      document.getElementById('scungle').style.font = "bold 50px Impact";
+
+    }else if(document.getElementById("searching").value=='undertale'||document.getElementById("searching").value=='sans')
+    {
+      document.body.style.backgroundImage = "url('https://pm1.narvii.com/6151/e45a49d8b62d59d1fe7656904825ffd26a837c59_hq.jpg')";
+      document.getElementById('scungle').innerHTML = "Sans Undertale";
+      document.getElementById('scungle').style.font = "bold 20px Comic Sans MS";
+    }
+  });
+  function randomNumOrLet(alphaArr) {
+    var x = Math.floor(Math.random() * 2);
+    if (x == 1) {
+      return alphaArr[Math.floor(Math.random() * 5)];
+    } else {
+      return Math.floor(Math.random() * 9);
+    }
+  }
+  function generateHex(alpha) {
+    y = ('#' +
+    randomNumOrLet(alpha) +
+    randomNumOrLet(alpha) +
+    randomNumOrLet(alpha) +
+    randomNumOrLet(alpha) +
+    randomNumOrLet(alpha) +
+    randomNumOrLet(alpha)).toString();
+    return y;
+  }
+  function randomWord(alpha) {
+    var sentence = '';
+    for (var i = 0; i < Math.floor(Math.random() * 100); i++) {
+      for (var i = 0; i < Math.floor(Math.random() * 25); i++) {
+        sentence = sentence.concat(randomLetter(alpha));
+      }
+      sentence = sentence.concat(' ');
+    }
+    return sentence;
+  }
+  function randomLetter(alphaText) {
+    x = alphaText[Math.floor(Math.random() * 25)];
+    return x;
+  }
+  function myFunction() {
+    var x = document.createElement("FORM");
+    x.setAttribute("id", "myForm");
+    document.body.appendChild(x);
+
+    var y = document.createElement("INPUT");
+    y.setAttribute("type", "text");
+    y.setAttribute("value", "Is that a Yolk?!?!?!?");
+    document.getElementById("myForm").appendChild(y);
+  }
+  </script>
+</body>
+</html>
